@@ -19,6 +19,9 @@ request({ uri: 'https://github.com/' + process.argv[2] }, function(err, response
     $('.repo_list h3 a').each(function() {
       repos.push($(this).text());
     });
-    console.dir(repos);
+    $.each(repos, function(i, repo) {
+      var url = 'git@github.com:tillberg/' + repo + '.git';
+      
+    });
   });
 });
