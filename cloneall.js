@@ -24,6 +24,7 @@ request({ uri: 'https://github.com/' + process.argv[2] }, function(err, response
     async.forEachLimit(repos, 1, function(repo, cb) {
       var url = 'git@github.com:tillberg/' + repo + '.git';
       exec('git', ['clone', url], { cwd: './' }, function() {
+	console.log('Finished ' + repo);
         cb();
       });
     }, function() {
