@@ -1,0 +1,16 @@
+{
+  "author": "Dan Tillberg <dan@tillberg.us> (http://tillberg.us/)",
+  "name": "clone-all-from-github",
+  "description": "Clone all your repos from github",
+  "version": "0.0.0",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/tillberg/clone-all-from-github.git"
+  },
+  "main": "cloneall.js",
+  "engines": {
+    "node": "~0.6.1"
+  },
+  "dependencies": {},
+  "devDependencies": {}
+}
