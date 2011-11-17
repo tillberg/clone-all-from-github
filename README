@@ -1,0 +1,8 @@
+Usage:
+
+git clone --recursive git://github.com/tillberg/clone-all-from-github.git
+cd clone-all-from-github
+npm install
+node cloneall.js <username>
+
+It will clone all the public repos of that user in your path.
