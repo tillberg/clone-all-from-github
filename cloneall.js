@@ -9,7 +9,7 @@ if (!username) {
   console.log('Usage: node cloneall.js <username>');
   process.exit();
 }
-request({ uri: 'https://github.com/' + process.argv[2] }, function(err, response, body){
+request({ uri: 'https://github.com/' + username }, function(err, response, body){
   if(err && response.statusCode !== 200){ console.log('Request error.'); }
   jsdom.env({
     html: body,
@@ -22,7 +22,7 @@ request({ uri: 'https://github.com/' + process.argv[2] }, function(err, response
       repos.push($(this).text());
     });
     async.forEachLimit(repos, 4, function(repo, cb) {
-      var url = 'git@github.com:tillberg/' + repo + '.git';
+      var url = 'git@github.com:' + username + '/' + repo + '.git';
       exec('git', ['clone', url], { cwd: './' }, function() {
 	console.log('Finished ' + repo);
         cb();
