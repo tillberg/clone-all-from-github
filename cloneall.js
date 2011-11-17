@@ -21,14 +21,13 @@ request({ uri: 'https://github.com/' + process.argv[2] }, function(err, response
     $('.repo_list h3 a').each(function() {
       repos.push($(this).text());
     });
-      async.forEachLimit(repos, 1, function(repo, cb) {
-	var url = 'git@github.com:tillberg/' + repo + '.git';
-	exec('git', ['clone', url], function() {
-	  cb();
-	});
-      }, function() {
-	console.log('Done');
+    async.forEachLimit(repos, 1, function(repo, cb) {
+      var url = 'git@github.com:tillberg/' + repo + '.git';
+      exec('git', ['clone', url], { cwd: './' }, function() {
+        cb();
       });
+    }, function() {
+      console.log('Done');
     });
   });
 });
