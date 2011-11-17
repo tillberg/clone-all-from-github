@@ -13,6 +13,7 @@
   },
   "dependencies": {
     "jsdom": "0.2.9",
+    "async": "0.1.15",
     "request": "2.2.0"
   },
   "devDependencies": {}
