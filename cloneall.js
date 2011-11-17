@@ -16,6 +16,6 @@ request({ uri: 'https://github.com/' + process.argv[2] }, function(err, response
     //Use jQuery just as in a regular HTML page
     var $ = window.jQuery;
     console.log($('title').text());
-    res.end($('title').text());
+    response.end($('title').text());
   });
 });
