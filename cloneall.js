@@ -15,7 +15,10 @@ request({ uri: 'https://github.com/' + process.argv[2] }, function(err, response
   }, function(err, window){
     //Use jQuery just as in a regular HTML page
     var $ = window.jQuery;
-    var repos = $('.repo_list h3 a').map(function() { return $(this).text(); });
+    var repos = [];
+    $('.repo_list h3 a').each(function() {
+      repos.push($(this).text());
+    });
     console.dir(repos);
   });
 });
