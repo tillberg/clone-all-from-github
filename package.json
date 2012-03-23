@@ -15,7 +15,7 @@
     "jsdom": "0.2.9",
     "async": "0.1.15",
     "underscore": "1.2.2",
-    "underscore.string": "1.2.0",
+    "underscore.string": "2.0.0",
     "request": "2.2.0"
   },
   "devDependencies": {}
